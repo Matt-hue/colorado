@@ -1,0 +1,25 @@
+.rooms-stats{
+    display: flex;
+    justify-content: center;
+    .room-stat{
+        width: 80px;
+        margin: 0px 10px;
+        padding: 2 10px;
+        //border-bottom: 2px solid;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .stat{
+            text-align: center;
+        }
+    }
+}
+
+.icon {  
+    //background-color: aqua;
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+} 

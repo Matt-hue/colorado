@@ -1,0 +1,51 @@
+.mat-stepper-vertical {
+
+
+  .mat-mdc-form-field {
+    margin-top: 16px;
+    margin-right: 5px;
+  }
+  .rooms-stats{
+    display: flex;
+    flex-direction: row;
+
+    .room-stat{
+      width: 80px;
+      margin: 0px 10px;
+      padding: 20px 0px;
+      //border-bottom: 2px solid;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      //justify-content: center;
+      .stat{
+          text-align: center;
+      }
+      .clear-btn{
+        //padding: 0;
+        //background-color: aqua;
+      }
+  }
+  }
+}
+
+.add-trait-container{
+  padding-top: 20px;
+}
+
+.property-trait-step-btn {
+  margin-top: 16px;
+  //background-color: aqua;
+}
+
+button{
+  margin-right: 5px;
+}
+
+p{
+  margin: 20px 0px;
+}
+
+ul{
+  padding-left: 0;
+}

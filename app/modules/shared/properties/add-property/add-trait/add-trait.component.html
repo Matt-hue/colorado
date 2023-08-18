@@ -1,0 +1,96 @@
+<mat-accordion>
+    <mat-expansion-panel ahideToggle [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Beds
+        </mat-panel-title>
+        <!-- <mat-panel-description>
+          Add bedding for your property
+        </mat-panel-description> -->
+      </mat-expansion-panel-header>
+      <div class="bed-container">
+        <form [formGroup]="bedFormGroup">
+          <div>
+            <!-- <label>Bed cover: </label> -->
+            <mat-form-field appearance="outline">
+              <mat-label>Size</mat-label>
+              <mat-select formControlName="bedCtrl">
+                <mat-option *ngFor="let bed of bedTypeOptions" [value]="bed.value">
+                  {{bed.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-radio-group formControlName="bedCoverCtrl">
+              <mat-radio-button value="duvet">Duvet</mat-radio-button>
+              <mat-radio-button value="quilt">Quilt</mat-radio-button>
+              <mat-radio-button value="none">No cover</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <button mat-icon-button (click)="addBeds()" aria-label="add room">
+            <mat-icon>add</mat-icon>
+          </button>
+        </form>
+        <ng-template [ngIf]="bedTraitTableRows?.length !== 0">
+          <app-row-delete-table [dataSource]="bedTraitTableRows" 
+          [displayedColumns]="['size', 'cover']" 
+          [displayedColumnsWithDelete]="['size', 'cover', 'delete']"
+          (selectedRow)="deleteBedTrait($event)">
+          </app-row-delete-table>
+        </ng-template>
+      </div>
+      
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Bathrooms
+        </mat-panel-title>
+        <!-- <mat-panel-description>
+          Add bathroom linens for your property
+        </mat-panel-description> -->
+      </mat-expansion-panel-header>
+      <div class="bathroom-container">
+        <form [formGroup]="bathroomFormGroup">
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Size</mat-label>
+              <mat-select formControlName="bathroomCtrl">
+                <mat-option *ngFor="let bathroomLinen of bathroomOptions" [value]="bathroomLinen.value">
+                  {{bathroomLinen.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-radio-group formControlName="bathroomSinkCtrl">
+              <mat-radio-button value="1">one sink</mat-radio-button>
+              <mat-radio-button value="2">two sinks</mat-radio-button>
+              <!-- <mat-radio-button value="1">no sink</mat-radio-button> -->
+            </mat-radio-group>
+          </div>
+          <button mat-icon-button (click)="addBathroomTrait()">
+            <mat-icon>add</mat-icon>
+          </button>
+        </form>
+        <ng-template [ngIf]="bathroomTraits?.length !== 0">
+          <app-row-delete-table [dataSource]="bathroomTraitTableRows" 
+          [displayedColumns]="['size', 'sinks']"
+          [displayedColumnsWithDelete]="['size', 'sinks', 'delete']"
+          (selectedRow)="deleteBathroomTrait($event)">
+          </app-row-delete-table>
+        </ng-template>
+      </div>
+    </mat-expansion-panel>
+    <!-- <mat-expansion-panel (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+    <mat-panel-title>
+      Kitchen linen
+    </mat-panel-title>
+    <mat-panel-description>
+      Add Kitchen linens for your property
+    </mat-panel-description>
+    </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel> -->
+</mat-accordion>
+  

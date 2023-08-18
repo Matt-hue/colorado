@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';  
+
+html, body { height: 100%; }
+body { 
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+.spacer { flex: 1 1 auto }
+
+:root {  
+    --app-primary: rgba(0, 0, 0, 0.039);
+    --app-secondary: #1f1f1f;
+    --app-accent: #f6eaf0;
+    --app-warn: #07eb66;
+    --app-white: white;
+
+    --app-pink: rgb(175, 56, 105);
+    --app-cream: #fff8df;
+  }
+
+.validation-error-msg{
+    color: red;
+}

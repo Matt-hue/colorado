@@ -1,0 +1,7 @@
+<div class="rooms-stats">
+    <div *ngFor="let room of roomStats  | keyvalue" class="room-stat">
+        <mat-icon fontIcon="{{room.value.matIcon}}" class="icon"></mat-icon>
+        <h3 class="stat">{{room.key | enumToString: 'RoomType' }}</h3>
+        <h3 class="stat"> x {{room.value.roomCount}}</h3>
+    </div>
+</div>

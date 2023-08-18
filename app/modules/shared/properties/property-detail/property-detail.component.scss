@@ -1,0 +1,62 @@
+.property-card {
+    margin: 3% 9%;
+
+    padding: 20px 30px;
+    //padding-top: 10px;
+
+    mat-card-header{
+        .property-type{
+            //font-size: x-large;
+        }
+    }
+
+    mat-card-content{
+        padding: 30px 10px;
+
+        app-property-traits{
+
+        }
+
+        .no-rooms{
+            margin-bottom: 10px;
+            //text-align: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            p{
+                margin-top: auto;
+                margin-bottom: auto;
+                margin-left: auto;
+            }
+            button{
+                margin-right: auto;
+                margin-left: 5px;
+            }
+        }
+    }
+ 
+}
+
+mat-card-actions{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: center;
+
+    .no-orders{
+        //margin-top: 10px;
+        //margin-left: auto;
+        //text-align: center;
+        //background-color: aqua;
+    }
+    
+    #shop-a{
+        //background-color: aqua;
+        margin-left: 10px;//auto;//text-align: right;
+        margin-right: 20px;
+        #shop-btn{
+            font-size: large;
+            margin-bottom: 5px;
+        }
+    }
+}

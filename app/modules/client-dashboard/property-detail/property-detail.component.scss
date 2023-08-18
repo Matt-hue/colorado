@@ -1,0 +1,118 @@
+.property-card {
+    margin: 4% 12%;
+
+    mat-card-header{
+        .property-type{
+            font-size: x-large;
+        }
+    }
+
+    mat-card-content{
+        padding: 10px 10px;
+        table {
+            width: 100%;
+            padding: 3%;
+                    
+        tr.example-detail-row {
+            height: 0;
+        }
+        
+        tr.example-element-row:not(.example-expanded-row):hover {
+            background: whitesmoke;
+        }
+        
+        tr.example-element-row:not(.example-expanded-row):active {
+            background: #efefef;
+        }
+        
+        .example-element-row td {
+            border-bottom-width: 0;
+        }
+        
+        .example-element-detail {
+            overflow: hidden;
+            display: flex;
+            //margin: 3%;
+            p{
+                //padding-left: 10px;
+                //margin: 10px;
+            }
+            //background-color: aqua;
+
+        }
+        
+        // .example-element-diagram {
+        //     min-width: 80px;
+        //     border: 2px solid black;
+        //     padding: 8px;
+        //     font-weight: lighter;
+        //     margin: 8px 0;
+        //     height: 104px;
+        // }
+        
+        // .example-element-symbol {
+        //     font-weight: bold;
+        //     font-size: 40px;
+        //     line-height: normal;
+        // }
+        
+        // .example-element-description {
+        //     padding: 16px;
+        // }
+        
+        // .example-element-description-attribution {
+        //     opacity: 0.5;
+        // }
+    
+        .mat-column-action {
+            text-align: right;
+            button{
+                margin-right: auto;
+    
+            }
+        }
+    
+        .mat-column-expand {
+            //flex: 0 0 3%;
+            text-align: left;
+            //background-color: aqua;
+        }
+        }
+    }
+
+    .rooms-stats{
+        display: flex;
+        justify-content: center;
+        .room-stat{
+            width: 80px;
+            margin: 0px 10px;
+            padding: 2 10px;
+            //border-bottom: 2px solid;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .stat{
+                text-align: center;
+            }
+        }
+    }
+
+    .icon {  
+        //background-color: aqua;
+        font-size: 48px;
+        width: 48px;
+        height: 48px;
+        line-height: 48px;
+        text-align: center;
+    }  
+}
+
+    #shop-a{
+        //background-color: aqua;
+        margin-left: auto;//text-align: right;
+        margin-right: 20px;
+        #shop-btn{
+            font-size: large;
+            margin-bottom: 5px;
+        }
+    }

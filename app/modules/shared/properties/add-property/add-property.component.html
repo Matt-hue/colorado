@@ -1,0 +1,100 @@
+<!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+  </button> -->
+  <mat-stepper  orientation="vertical" [linear]="isLinear" #stepper  [selectedIndex]="3 ?? selectedIndex">
+    <form [formGroup]="addressFormGroup">
+      <mat-step [stepControl]="addressFormGroup">
+            <ng-template matStepLabel>Address</ng-template>
+            <mat-form-field appearance="outline">
+              <mat-label>Address</mat-label>
+              <input matInput formControlName="addressCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                    required>
+            </mat-form-field>
+            <div>
+              <button mat-raised-button matStepperNext>Next</button>
+            </div>
+
+      </mat-step>
+      <mat-step [stepControl]="addressFormGroup">
+        <ng-template matStepLabel>Property type</ng-template>
+        <mat-form-field appearance="outline">
+          <mat-label>Property type</mat-label>
+          <mat-select formControlName="propertyTypeCtrl">
+            <mat-option *ngFor="let propertyType of propertyTypeOptions" [value]="propertyType.value">
+              {{propertyType.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Number of guests</mat-label>
+          <input matInput formControlName="guestsCountCtrl" type="number">
+        </mat-form-field>
+        <div>
+          <button mat-raised-button matStepperPrevious>Back</button>
+          <button mat-raised-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+      <mat-step [stepControl]="addressFormGroup">
+
+          <ng-template matStepLabel>Property calendar (optional)</ng-template>
+          <mat-form-field appearance="outline">
+            <mat-label>Calendar link</mat-label>
+            <input matInput placeholder="Last name, First name" formControlName="calendarCtrl">
+          </mat-form-field>
+          <div>
+              <button mat-raised-button matStepperPrevious>Back</button>
+            <button mat-raised-button matStepperNext>Next</button>
+          </div>
+      </mat-step>
+    </form>
+    <!-- <form [formGroup]="roomsFormGroup">
+      <mat-step [stepControl]="roomsFormGroup">
+        <ng-template matStepLabel>Layout</ng-template>
+        <mat-form-field>
+          <mat-label>Type</mat-label>
+          <mat-select formControlName="roomTypeCtrl">
+            <mat-option *ngFor="let room of roomTypeOptions" [value]="room.value">
+              {{room.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button (click)="addRooms()" aria-label="add room">
+          <mat-icon>add</mat-icon>
+        </button>
+        <div class="rooms-stats">
+          <div *ngFor="let room of getRoomStats()  | keyvalue" class="room-stat">
+              <mat-icon matBadge="{{room.value.roomCount}}" matBadgeColor="accent" fontIcon="{{room.value.matIcon}}" class="icon"></mat-icon>
+              {{room.key | enumToString: 'RoomType' }}
+              <button mat-icon-button (click)="removeRoom(room.key)" class="clear-btn"><mat-icon >clear</mat-icon></button>
+          </div>
+        </div>
+        <div>
+          <button mat-raised-button matStepperPrevious>Back</button>
+          <button mat-raised-button matStepperNext>Next</button>
+        </div>
+      </mat-step>
+    </form> -->
+    <mat-step>
+      <ng-template matStepLabel>Layout (optional)</ng-template>
+      <div class="add-trait-container">
+        <app-add-trait></app-add-trait>
+      </div>
+      <div class="property-trait-step-btn">
+        <button mat-raised-button matStepperPrevious>Back</button>
+        <button mat-raised-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p class="validation-error-msg" *ngIf="!addressFormGroup.valid">
+        Please enter all required fields*
+      </p>
+      <div>
+        <button mat-raised-button matStepperPrevious>Back</button>
+        <!-- <button mat-raised-button (click)="stepper.reset()">Reset</button> -->
+        <!-- <a mat-raised-button [routerLink]="['../','edit-property']">Add rooms</a> -->
+        <button mat-raised-button (click)="saveProperty()" [disabled]="!addressFormGroup.valid">Save</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+  

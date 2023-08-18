@@ -1,0 +1,38 @@
+<div class="main">
+    <mat-toolbar acolor="accent" class="mat-elevation-z3">
+        <!-- <span><h1>STR Linens</h1></span>
+        <span class="spacer"></span>
+        <span><a [routerLink]="['/dashboard']" >Administration </a></span>
+        <span class="spacer"></span>
+        <span><a [routerLink]="['/client-dashboard']" >Client Dashboard </a></span> -->
+        <mat-nav-list class="links flex-item">
+            <a *ngFor="let r of routes" mat-list-item [routerLink]="r.route">{{r.displayName}}</a>
+            <!-- <a mat-list-item [routerLink]="['ao']">enuhasne eououhasneaus</a> -->
+        </mat-nav-list>
+        <div class="flex-item img-container">
+            <img src="../../../assets/STRLinens.png" alt="Company Logo">  
+        </div>
+        <mat-nav-list class="actions flex-item">
+            <a mat-list-item [routerLink]="">Login</a>
+            <button  mat-button >
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="shopping_cart">
+                </mat-icon>
+            </button>
+        </mat-nav-list>
+    </mat-toolbar>
+<!-- <p>shopfront works!</p>
+<button (click)="onIdentify()">click me to identify</button>
+<button (click)="onClick()">click me to raise event</button> -->
+    <div class="router-outlet-content">
+        <router-outlet>
+        </router-outlet>
+    </div>
+    <footer>
+        <mat-nav-list>
+            <a mat-list-item [routerLink]="['checkout']">Privacy Policy</a>
+            <a mat-list-item [routerLink]="['ao']">Terms of Service</a>
+            <a mat-list-item [routerLink]="['ao']">STR Linens</a>
+            <a mat-list-item [routerLink]="['ao']">katie@strlinens.com</a>
+        </mat-nav-list>
+    </footer>
+</div>

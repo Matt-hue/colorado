@@ -1,0 +1,18 @@
+// :host{
+//     margin-top: 100px;
+//     //background-color: aqua !important;
+// }
+
+// mat-vertical-content {
+//     margin-top: 100px;
+//     background-color: aqua !important;
+// }
+
+.bed-container, .bathroom-container{
+    mat-radio-group{
+        @media (min-width: 440px) {  
+            margin-left: 20px;
+          }  
+          
+    }
+}

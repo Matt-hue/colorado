@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="filter-list">
+        <ng-container *ngFor="let filter of productFilters">
+            <h4 class="filter" >{{filter}}</h4>
+            <div class="separator"></div>
+        </ng-container>
+    </div>
+    <hr id="services-line-separator">
+    <div class="products">
+        <app-product-card *ngFor="let product of products" 
+        [imageUrl]="product.imgUrl"
+        [productTitle]="product.productTitle"
+        [productSubtitle]="product.productSubtitle"
+        ></app-product-card>
+    </div>
+</div>

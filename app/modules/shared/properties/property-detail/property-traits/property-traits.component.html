@@ -1,0 +1,20 @@
+<ng-container *ngIf="propertyHasTraits; else noTraits">
+  <mat-tab-group>
+    <mat-tab label="Bedrooms" [disabled]="this.bedroomTraits === undefined || this.bedroomTraits.length === 0">
+      <div class="action-table">
+        <app-action-table [dataSource]="this.bedroomTraits" 
+        [displayedColumns]="['size', 'cover']"
+        [displayedColumnsWithAction]="['size', 'cover', 'action']"
+        [action]="'clear'">
+        </app-action-table>
+      </div>
+    </mat-tab>
+    <mat-tab label="Bathrooms"> Bathrooms </mat-tab>
+    <mat-tab label="Kitchens" [disabled]="true"> Kitchens </mat-tab>
+  </mat-tab-group>
+</ng-container> 
+  
+<ng-template #noTraits>  
+  <!-- content to display if user is not logged in -->  
+  <p><i class="trait-warning-msg">This property has no layout details</i></p>  
+</ng-template>  

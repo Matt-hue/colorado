@@ -1,0 +1,44 @@
+<mat-card class="property-card" (click)="editProperty()">
+    <mat-card-header>
+        <!-- <p class="property-type">{{property.type | enumToString : 'PropertyType'}}: &nbsp;</p>
+        <p>{{property.address}} &nbsp;</p>
+        <p>Guests: {{property.guests}}</p>
+        <span class="spacer"></span> -->
+        <mat-chip-listbox aria-label="Fish selection">
+          <mat-chip>{{property.type | enumToString : 'PropertyType'}}</mat-chip>
+          <mat-chip>{{property.guests}} {{property.guests > 1? 'guests' : 'guest'}}</mat-chip>
+          <mat-chip>{{property.address}}</mat-chip>
+        </mat-chip-listbox>
+        <span class="spacer"></span>
+        <button mat-icon-button  color="basic">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" aria-label="Example icon-button with a heart icon">
+          <mat-icon>delete</mat-icon>
+        </button>
+      <!-- <mat-card-subtitle>{{property.address}}</mat-card-subtitle>
+      <mat-card-title>{{property.type}}</mat-card-title> -->
+    </mat-card-header>
+    <!-- <mat-divider></mat-divider> -->
+    <mat-card-content>
+      <app-property-traits [property]="property"></app-property-traits>
+      <mat-divider></mat-divider>
+
+      <ng-container *ngIf="false">
+        <mat-card-title>Previous Orders</mat-card-title>
+        <app-order-history></app-order-history>
+      </ng-container>
+    </mat-card-content>
+    <mat-card-actions>
+        <div class="no-orders" *ngIf="true">
+            <p>Would you like to create an order for this property?</p>
+        </div>
+        <a id="shop-a" href="https://strlinens.com/shop">
+            <button id="shop-btn" mat-raised-button color="primary" mat-button >
+                <mat-icon>shopping_cart</mat-icon> Shop
+            </button>
+        </a>
+    </mat-card-actions>
+    <mat-card-footer>
+    </mat-card-footer>
+</mat-card>  
